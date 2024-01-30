@@ -1,14 +1,17 @@
 extends Node2D
 
 var velocity;
+var maxSpeed = 150;
 
 func _ready():
 	velocity = Vector2(randi_range(-1, 1),randi_range(-1, 1))
-	print(velocity)
 	
 func _process(_delta):
-	position = position * velocity
-	rotation = atan2(velocity.x, velocity.y) + 2.82743
-
-func addVelocity(newVelocity: Vector2):
-	velocity = velocity + newVelocity;
+	var speed = velocity.length()
+	if (speed > maxSpeed):
+		velocity = (velocity / speed) * maxSpeed
+	
+	position = position + (velocity * _delta)
+	
+	var direction = velocity.normalized()
+	rotation = atan2(direction.y, direction.x)
