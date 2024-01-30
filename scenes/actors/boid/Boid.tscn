@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://scenes/actors/boid/Boid.gd" id="1_kenxk"]
 [ext_resource type="Texture2D" uid="uid://dhop6julkxeho" path="res://scenes/actors/boid/arrow.png" id="2_b3vgf"]
 
-[node name="Boid" type="Node2D"]
+[node name="Boid" type="RigidBody2D"]
+mass = 0.01
 script = ExtResource("1_kenxk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
