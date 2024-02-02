@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://uhhojjufmux1"]
+
+[ext_resource type="Script" path="res://scenes/simulation/Simulation.gd" id="1_i3jt8"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="2_wmuc5"]
+
+[node name="Simulation" type="Node2D"]
+script = ExtResource("1_i3jt8")
+
+[node name="UI" type="Node2D" parent="."]
+script = ExtResource("2_wmuc5")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+offset_left = 972.0
+offset_top = 15.0
+offset_right = 1136.0
+offset_bottom = 389.0
+
+[node name="Settings Panel" type="VBoxContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+
+[node name="Settings" type="Label" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seperation" type="Label" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+text = "Seperation"
+
+[node name="Seperation Slider" type="HSlider" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+min_value = 0.1
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Alignment" type="Label" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+text = "Alignment"
+
+[node name="Alignment Slider" type="HSlider" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+min_value = 0.1
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Cohesion" type="Label" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+text = "Cohesion"
+
+[node name="Cohesion Slider" type="HSlider" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+min_value = 0.1
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="View Distance" type="Label" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+text = "View Distance"
+
+[node name="View Distance Slider" type="HSlider" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+min_value = 150.0
+max_value = 500.0
+value = 250.0
+
+[node name="Label" type="Label" parent="UI/PanelContainer/Settings Panel"]
+layout_mode = 2
+
+[connection signal="value_changed" from="UI/PanelContainer/Settings Panel/Seperation Slider" to="UI" method="_on_seperation_slider_value_changed"]
+[connection signal="value_changed" from="UI/PanelContainer/Settings Panel/Alignment Slider" to="UI" method="_on_alignment_slider_value_changed"]
+[connection signal="value_changed" from="UI/PanelContainer/Settings Panel/Cohesion Slider" to="UI" method="_on_cohesion_slider_value_changed"]
+[connection signal="value_changed" from="UI/PanelContainer/Settings Panel/View Distance Slider" to="UI" method="_on_view_distance_slider_value_changed"]

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Boids Sim"
-run/main_scene="res://scenes/levels/Simulation.tscn"
+run/main_scene="res://scenes/simulation/Simulation.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
 
 [rendering]
 

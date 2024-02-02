@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://xnahx0iqimsk"]
+
+[ext_resource type="Script" path="res://scenes/boid/Boid.gd" id="1_u35mp"]
+[ext_resource type="Texture2D" uid="uid://dhop6julkxeho" path="res://scenes/boid/arrow.png" id="2_yjb6a"]
+
+[node name="Boid" type="RigidBody2D"]
+mass = 0.01
+script = ExtResource("1_u35mp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_yjb6a")

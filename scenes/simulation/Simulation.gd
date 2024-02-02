@@ -1,8 +1,8 @@
 extends Node2D
 
-@export var boidCount : int = 75
+@export var boidCount : int = 50
 
-var boidScene = preload("res://scenes/actors/boid/Boid.tscn")
+var boidScene = preload("res://scenes/boid/Boid.tscn")
 var viewport;
 var padding = 50;
 
